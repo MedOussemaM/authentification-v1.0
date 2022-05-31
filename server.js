@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 dotenv.config();
 
 const authRoute = require('./route/auth')
-
+const gameRoute = require('./route/game')
 mongoose.connect(process.env.MONGO_URI,
     { useNewUrlParser: true },
     () => console.log('Database Connected'));
@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_URI,
 
     app.use('/api/user' ,authRoute) 
 
-
+app.use('/game' ,gameRoute)
 
 
 
